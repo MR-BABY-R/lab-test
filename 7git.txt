@@ -1,0 +1,285 @@
+
+Lenovo@DESKTOP-Q2BBVLA MINGW64 ~ (master)
+$ pwd
+/c/Users/Lenovo
+
+Lenovo@DESKTOP-Q2BBVLA MINGW64 ~ (master)
+$ mkdir w
+
+Lenovo@DESKTOP-Q2BBVLA MINGW64 ~ (master)
+$ cd w
+
+Lenovo@DESKTOP-Q2BBVLA MINGW64 ~/w (master)
+$ git config --global user.name"usmanaazim"
+
+Lenovo@DESKTOP-Q2BBVLA MINGW64 ~/w (master)
+$ git congig --global user.email"iproenterprises2023@gmail.com"
+git: 'congig' is not a git command. See 'git --help'.
+
+The most similar command is
+        config
+
+Lenovo@DESKTOP-Q2BBVLA MINGW64 ~/w (master)
+$ git config --global user.email"iproenterprises2023@gmail.com"
+
+Lenovo@DESKTOP-Q2BBVLA MINGW64 ~/w (master)
+$ git init
+Initialized empty Git repository in C:/Users/Lenovo/w/.git/
+
+Lenovo@DESKTOP-Q2BBVLA MINGW64 ~/w (master)
+$ touch 9.txt
+
+Lenovo@DESKTOP-Q2BBVLA MINGW64 ~/w (master)
+$ notepad 9.txt
+
+Lenovo@DESKTOP-Q2BBVLA MINGW64 ~/w (master)
+$ git add 9.txt
+
+Lenovo@DESKTOP-Q2BBVLA MINGW64 ~/w (master)
+$ git commit -m "hi raji"
+[master (root-commit) 7bf67f7] hi raji
+ 1 file changed, 1 insertion(+)
+ create mode 100644 9.txt
+
+Lenovo@DESKTOP-Q2BBVLA MINGW64 ~/w (master)
+$ git checkout master
+Already on 'master'
+
+Lenovo@DESKTOP-Q2BBVLA MINGW64 ~/w (master)
+$ git tag v1.0
+
+Lenovo@DESKTOP-Q2BBVLA MINGW64 ~/w (master)
+$ git tag
+v1.0
+
+Lenovo@DESKTOP-Q2BBVLA MINGW64 ~/w (master)
+$ git push origin --tag
+fatal: 'origin' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+
+Lenovo@DESKTOP-Q2BBVLA MINGW64 ~/w (master)
+$ git remote add origin https://github.com/usmanaazim/cy021.git
+
+Lenovo@DESKTOP-Q2BBVLA MINGW64 ~/w (master)
+$ git remote -v
+origin  https://github.com/usmanaazim/cy021.git (fetch)
+origin  https://github.com/usmanaazim/cy021.git (push)
+
+Lenovo@DESKTOP-Q2BBVLA MINGW64 ~/w (master)
+$ git push -u
+fatal: The current branch master has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin master
+
+To have this happen automatically for branches without a tracking
+upstream, see 'push.autoSetupRemote' in 'git help config'.
+
+
+Lenovo@DESKTOP-Q2BBVLA MINGW64 ~/w (master)
+$ git push -u origin master
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 213 bytes | 106.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+remote:
+remote: Create a pull request for 'master' on GitHub by visiting:
+remote:      https://github.com/usmanaazim/cy021/pull/new/master
+remote:
+To https://github.com/usmanaazim/cy021.git
+ * [new branch]      master -> master
+branch 'master' set up to track 'origin/master'.
+
+Lenovo@DESKTOP-Q2BBVLA MINGW64 ~/w (master)
+$ touch 0.txt
+
+Lenovo@DESKTOP-Q2BBVLA MINGW64 ~/w (master)
+$ notepad 0.txt
+
+Lenovo@DESKTOP-Q2BBVLA MINGW64 ~/w (master)
+$ git add 0.txt
+
+Lenovo@DESKTOP-Q2BBVLA MINGW64 ~/w (master)
+$ git log
+commit 7bf67f7b43d5ec0c54377d32236fe047f2d040ab (HEAD -> master, tag: v1.0, origin/master)
+Author: usmanaazim <iproenterprises2023@hmail.com>
+Date:   Mon Dec 9 19:39:30 2024 +0530
+
+    hi raji
+
+Lenovo@DESKTOP-Q2BBVLA MINGW64 ~/w (master)
+$ git tag v2.0
+
+Lenovo@DESKTOP-Q2BBVLA MINGW64 ~/w (master)
+$ git push origin --tag
+Total 0 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To https://github.com/usmanaazim/cy021.git
+ * [new tag]         v1.0 -> v1.0
+ * [new tag]         v2.0 -> v2.0
+
+Lenovo@DESKTOP-Q2BBVLA MINGW64 ~/w (master)
+$ git log --oneline
+7bf67f7 (HEAD -> master, tag: v2.0, tag: v1.0, origin/master) hi raji
+
+Lenovo@DESKTOP-Q2BBVLA MINGW64 ~/w (master)
+$ git cheery-pick 7bf67f7
+git: 'cheery-pick' is not a git command. See 'git --help'.
+
+The most similar command is
+        cherry-pick
+
+Lenovo@DESKTOP-Q2BBVLA MINGW64 ~/w (master)
+$ git cherry-pick 7bf67f7
+error: your local changes would be overwritten by cherry-pick.
+hint: commit your changes or stash them to proceed.
+fatal: cherry-pick failed
+
+Lenovo@DESKTOP-Q2BBVLA MINGW64 ~/w (master)
+$ git commit -m "hi"
+[master 867b11d] hi
+ 1 file changed, 1 insertion(+)
+ create mode 100644 0.txt
+
+Lenovo@DESKTOP-Q2BBVLA MINGW64 ~/w (master)
+$ git cherry-pick 7bf67f7
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+
+You are currently cherry-picking commit 7bf67f7.
+  (all conflicts fixed: run "git cherry-pick --continue")
+  (use "git cherry-pick --skip" to skip this patch)
+  (use "git cherry-pick --abort" to cancel the cherry-pick operation)
+
+nothing to commit, working tree clean
+The previous cherry-pick is now empty, possibly due to conflict resolution.
+If you wish to commit it anyway, use:
+
+    git commit --allow-empty
+
+Otherwise, please use 'git cherry-pick --skip'
+
+Lenovo@DESKTOP-Q2BBVLA MINGW64 ~/w (master|CHERRY-PICKING)
+$ git log
+commit 867b11dad13e92cbdc45db6c608200a7bc8af20c (HEAD -> master)
+Author: usmanaazim <iproenterprises2023@hmail.com>
+Date:   Mon Dec 9 19:49:39 2024 +0530
+
+    hi
+
+commit 7bf67f7b43d5ec0c54377d32236fe047f2d040ab (tag: v2.0, tag: v1.0, origin/master)
+Author: usmanaazim <iproenterprises2023@hmail.com>
+Date:   Mon Dec 9 19:39:30 2024 +0530
+
+    hi raji
+
+Lenovo@DESKTOP-Q2BBVLA MINGW64 ~/w (master|CHERRY-PICKING)
+$ git cherry-pick 7bf67f7^..7bf67f7
+fatal: bad revision '7bf67f7^..7bf67f7'
+
+Lenovo@DESKTOP-Q2BBVLA MINGW64 ~/w (master|CHERRY-PICKING)
+$ git log --oneline
+867b11d (HEAD -> master) hi
+7bf67f7 (tag: v2.0, tag: v1.0, origin/master) hi raji
+
+Lenovo@DESKTOP-Q2BBVLA MINGW64 ~/w (master|CHERRY-PICKING)
+$ git cherry-pick 7bf67f7^..867b11d
+fatal: bad revision '7bf67f7^..867b11d'
+
+Lenovo@DESKTOP-Q2BBVLA MINGW64 ~/w (master|CHERRY-PICKING)
+$ git cherry-pick7bf67f7^..867b11d
+git: 'cherry-pick7bf67f7^..867b11d' is not a git command. See 'git --help'.
+
+Lenovo@DESKTOP-Q2BBVLA MINGW64 ~/w (master|CHERRY-PICKING)
+$ git cherry-pick 7bf67f7^..867b11d
+fatal: bad revision '7bf67f7^..867b11d'
+
+Lenovo@DESKTOP-Q2BBVLA MINGW64 ~/w (master|CHERRY-PICKING)
+$ git cherry-pick 7bf67f7^..867b11d
+fatal: bad revision '7bf67f7^..867b11d'
+
+Lenovo@DESKTOP-Q2BBVLA MINGW64 ~/w (master|CHERRY-PICKING)
+$ git cherry-pick 7bf67f7^..867b11d
+fatal: bad revision '7bf67f7^..867b11d'
+
+Lenovo@DESKTOP-Q2BBVLA MINGW64 ~/w (master|CHERRY-PICKING)
+$ git cherry-pick 7bf67f7^..867b11d
+fatal: bad revision '7bf67f7^..867b11d'
+
+Lenovo@DESKTOP-Q2BBVLA MINGW64 ~/w (master|CHERRY-PICKING)
+$ git show 7bf6f7
+fatal: ambiguous argument '7bf6f7': unknown revision or path not in the working tree.
+Use '--' to separate paths from revisions, like this:
+'git <command> [<revision>...] -- [<file>...]'
+
+Lenovo@DESKTOP-Q2BBVLA MINGW64 ~/w (master|CHERRY-PICKING)
+$ git show 7bf6f7
+fatal: ambiguous argument '7bf6f7': unknown revision or path not in the working tree.
+Use '--' to separate paths from revisions, like this:
+'git <command> [<revision>...] -- [<file>...]'
+
+Lenovo@DESKTOP-Q2BBVLA MINGW64 ~/w (master|CHERRY-PICKING)
+$ git show 7bf67f7
+commit 7bf67f7b43d5ec0c54377d32236fe047f2d040ab (tag: v2.0, tag: v1.0, origin/master)
+Author: usmanaazim <iproenterprises2023@hmail.com>
+Date:   Mon Dec 9 19:39:30 2024 +0530
+
+    hi raji
+
+diff --git a/9.txt b/9.txt
+new file mode 100644
+index 0000000..32f95c0
+--- /dev/null
++++ b/9.txt
+@@ -0,0 +1 @@
++hi
+\ No newline at end of file
+
+Lenovo@DESKTOP-Q2BBVLA MINGW64 ~/w (master|CHERRY-PICKING)
+$ git log --author="usmanaazim" --since"01-12-2024" --until"09-12-2024"
+fatal: unrecognized argument: --since01-12-2024
+
+Lenovo@DESKTOP-Q2BBVLA MINGW64 ~/w (master|CHERRY-PICKING)
+$ git log --author="usmanaazim" --since="01-12-2024" --until="09-12-2024"
+
+Lenovo@DESKTOP-Q2BBVLA MINGW64 ~/w (master|CHERRY-PICKING)
+$ git log -n 1 7bf67f7
+commit 7bf67f7b43d5ec0c54377d32236fe047f2d040ab (tag: v2.0, tag: v1.0, origin/master)
+Author: usmanaazim <iproenterprises2023@hmail.com>
+Date:   Mon Dec 9 19:39:30 2024 +0530
+
+    hi raji
+
+Lenovo@DESKTOP-Q2BBVLA MINGW64 ~/w (master|CHERRY-PICKING)
+$ git log -n 2
+commit 867b11dad13e92cbdc45db6c608200a7bc8af20c (HEAD -> master)
+Author: usmanaazim <iproenterprises2023@hmail.com>
+Date:   Mon Dec 9 19:49:39 2024 +0530
+
+    hi
+
+commit 7bf67f7b43d5ec0c54377d32236fe047f2d040ab (tag: v2.0, tag: v1.0, origin/master)
+Author: usmanaazim <iproenterprises2023@hmail.com>
+Date:   Mon Dec 9 19:39:30 2024 +0530
+
+    hi raji
+
+Lenovo@DESKTOP-Q2BBVLA MINGW64 ~/w (master|CHERRY-PICKING)
+$ git log -n 3
+commit 867b11dad13e92cbdc45db6c608200a7bc8af20c (HEAD -> master)
+Author: usmanaazim <iproenterprises2023@hmail.com>
+Date:   Mon Dec 9 19:49:39 2024 +0530
+
+    hi
+
+commit 7bf67f7b43d5ec0c54377d32236fe047f2d040ab (tag: v2.0, tag: v1.0, origin/master)
+Author: usmanaazim <iproenterprises2023@hmail.com>
+Date:   Mon Dec 9 19:39:30 2024 +0530
+
+    hi raji
+
+Lenovo@DESKTOP-Q2BBVLA MINGW64 ~/w (master|CHERRY-PICKING)
+$ git log --author="JohnDeo" --since="2023-01-01" --until="2023-12-31"
